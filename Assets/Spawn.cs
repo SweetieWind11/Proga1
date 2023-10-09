@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject objectToSpawn;
+    public float speed;
+
+    public Vector3 spawnPoint = new Vector3(0, 0, 0);
+    
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(objectToSpawn, spawnPoint, Quaternion.identity)
+        }
     }
 }
