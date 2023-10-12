@@ -6,19 +6,26 @@ public class Spawn : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public float speed;
-
-    public Vector3 spawnPoint = new Vector3(0, 0, 0);
+    public float SPI = 5f; //SPI es una abreviación de Spawn Interval
+    private float TSP; //Este es una abreviación de TimeSinceSpawn
     
     void Start()
     {
-
+        TSP = 0f;
     }
 
     void Update()
     {
+        TSP += Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(objectToSpawn, spawnPoint, Quaternion.identity)
+            SPO();
+            TSP = 0f;
         }
+    }
+    void SPO()
+    {
+       GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+        Destroy(spawnedObject, SPI);
     }
 }
