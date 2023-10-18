@@ -17,4 +17,5 @@ public class Move : MonoBehaviour
     {
         transform.Translate(direction.normalized * speed * Time.deltaTime);  
     }
+
 }
