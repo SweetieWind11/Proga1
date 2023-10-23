@@ -6,6 +6,14 @@ public class Wall : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(collision.gameObject);
+        if (collision.gameObject.tag == "enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "PRP")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

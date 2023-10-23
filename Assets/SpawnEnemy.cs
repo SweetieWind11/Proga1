@@ -17,11 +17,11 @@ public class SpawnEnemy : MonoBehaviour
         SPI -= Time.deltaTime;
         if (SPI < 0)
         {
-            float num = Random.Range(3, 5);
-            Vector3 EnemyStart = new Vector3(num, 7, 0);
+            float num = Random.Range(-3, 6);
+            Vector3 EnemyStart = new Vector3(10, num, 0);
             GameObject spawnedObject = Instantiate(Enemy1, EnemyStart, transform.rotation);
             Destroy(spawnedObject, despawnTime);
-            SPI = 3f;
+            SPI = 5f;
 
         }
     }

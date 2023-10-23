@@ -5,6 +5,8 @@ using UnityEngine;
 public class MovementeCube : MonoBehaviour
 {
     public float speed = 1f;
+    private int vidas = 3;
+
     void Start()
     {
         
@@ -26,6 +28,14 @@ public class MovementeCube : MonoBehaviour
     void move(Vector3 direction)
     {
         transform.position += direction.normalized * speed * Time.deltaTime;
+    }
+    public void scorev(int vp)
+    {
+        vidas = vidas - vp;
+        if (vidas <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 
