@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemyfunction : MonoBehaviour
 {
+    private Spawn Lifes; 
     private float speed = 10;
 
     Vector3 direction = new Vector3(-1, 0, 0);
@@ -13,6 +14,7 @@ public class Enemyfunction : MonoBehaviour
     private MovementeCube vidas;
     private void Start()
     {
+        Lifes = FindObjectOfType<Spawn>();
         puntos = FindObjectOfType<Puntos>();
     }
     void Update()
@@ -27,9 +29,14 @@ public class Enemyfunction : MonoBehaviour
             puntos.AddPoints(1);
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Player")
         {
-            vidas.scorev(1);
+            Destroy(gameObject);
+            Lifes.Lifes();
+        }
+        else
+        {
+            Destroy(gameObject);
         }
         Destroy(gameObject);
     }

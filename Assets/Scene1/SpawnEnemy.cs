@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    public float SPI = 5F;
+    public float SPI = 4F;
     public GameObject Enemy1;
-    public float despawnTime = 5F;
     void Start()
     {
     }
@@ -19,10 +18,8 @@ public class SpawnEnemy : MonoBehaviour
         {
             float num = Random.Range(-3, 6);
             Vector3 EnemyStart = new Vector3(10, num, 0);
-            GameObject spawnedObject = Instantiate(Enemy1, EnemyStart, transform.rotation);
-            Destroy(spawnedObject, despawnTime);
-            SPI = 5f;
-
+            Instantiate(Enemy1, EnemyStart, transform.rotation);
+            SPI = 1F;
         }
     }
 

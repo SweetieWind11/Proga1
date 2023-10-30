@@ -8,6 +8,7 @@ public class Spawn : MonoBehaviour
     public float speed;
     public float SPI = 5f; //SPI es una abreviación de Spawn Interval
     private float TSP; //Este es una abreviación de TimeSinceSpawn
+    public int life = 3;
     
     void Start()
     {
@@ -27,5 +28,13 @@ public class Spawn : MonoBehaviour
     {
        GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
         Destroy(spawnedObject, SPI);
+    }
+    public void Lifes()
+    {
+        life = life - 1;
+        if (life == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

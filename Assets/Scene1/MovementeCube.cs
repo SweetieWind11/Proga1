@@ -29,13 +29,6 @@ public class MovementeCube : MonoBehaviour
     {
         transform.position += direction.normalized * speed * Time.deltaTime;
     }
-    public void scorev(int vp)
-    {
-        vidas = vidas - vp;
-        if (vidas <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }
 
