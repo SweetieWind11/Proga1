@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Spawn : MonoBehaviour
 {
     public GameObject objectToSpawn;
@@ -35,6 +35,7 @@ public class Spawn : MonoBehaviour
         if (life == 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 }
