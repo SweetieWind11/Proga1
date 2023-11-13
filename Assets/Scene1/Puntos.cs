@@ -20,7 +20,7 @@ public class Puntos : MonoBehaviour
     void Update()
     {
         textComponent.text = "Puntos: " + puntos;
-        if (puntos >= 100)
+        if (puntos >= 5)
         {
             SceneManager.LoadScene(3);
         }

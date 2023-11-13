@@ -19,7 +19,6 @@ public class VidasScore : MonoBehaviour
         
           textComponent.text = "Vidas: " + spawnScript.life;
         
-        
     }
 
 }

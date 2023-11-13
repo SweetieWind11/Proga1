@@ -21,7 +21,7 @@ public class Enemyfunction : MonoBehaviour
     {
         transform.Translate(direction.normalized * speed * Time.deltaTime);
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         //"puntos.puntos = puntos.puntos + 1;" Se abrevia con ++ u si quiero abreviar una suma mayor +=5 ademas solo se usa si la variable es publica
         if (collision.gameObject.tag == "PRP")

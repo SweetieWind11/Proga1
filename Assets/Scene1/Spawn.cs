@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 public class Spawn : MonoBehaviour
 {
     public GameObject objectToSpawn;
+    public SpriteRenderer spriteRenderer;
+    public GameObject boomObject;
     public float speed;
     public float SPI = 5f; //SPI es una abreviación de Spawn Interval
     private float TSP; //Este es una abreviación de TimeSinceSpawn
-    public int life = 3;
+    public int life;
     
     void Start()
     {
@@ -34,8 +36,15 @@ public class Spawn : MonoBehaviour
         life = life - 1;
         if (life == 0)
         {
-            Destroy(gameObject);
-            SceneManager.LoadScene(2);
+            spriteRenderer.enabled = false;
+            boomObject.SetActive(true);
+            boomObject.GetComponent<Animator>().SetTrigger("boom");
+            Invoke("ChangeScene", .7f);
         }
+    }
+
+    public void ChangeScene()
+    {
+        SceneManager.LoadScene(2);
     }
 }
