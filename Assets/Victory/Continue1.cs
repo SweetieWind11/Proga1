@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BotonesGO : MonoBehaviour
+public class Continue1 : MonoBehaviour
 {
-
-    public void Exit()
+    public void Menu()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
-
 
 }

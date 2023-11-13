@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Puntos : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Puntos : MonoBehaviour
     void Update()
     {
         textComponent.text = "Puntos: " + puntos;
+        if (puntos >= 100)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
     public void AddPoints(int cpts)
     {
