@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PRP
   - enemy
+  - NBuff
+  - HBuff
+  - Wall
   layers:
   - Default
   - TransparentFX

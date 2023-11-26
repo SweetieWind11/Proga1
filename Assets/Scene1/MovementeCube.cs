@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementeCube : MonoBehaviour
 {
     public float speed = 1f;
-    private int vidas = 3;
+
 
     void Start()
     {

@@ -2,32 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : MonoBehaviour
+public class NashorBulletMove : MonoBehaviour
 {
-    private float speed = 40;
+    private float speed = 20;
     Vector3 direction = new Vector3(1, 0, 0);
-    // Start is called before the first frame update
-    void Start()
-    {
+    private float lifetime = 5f; // Tiempo de vida del objeto en segundos
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(direction.normalized * speed * Time.deltaTime);
-    }
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "HBuff" || collision.gameObject.tag == "NBuff")
-        {
 
-        }
-        else
+        lifetime -= Time.deltaTime;
+
+        if (lifetime <= 0f)
         {
             Destroy(gameObject);
         }
 
     }
-
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

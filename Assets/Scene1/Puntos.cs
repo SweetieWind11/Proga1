@@ -20,7 +20,7 @@ public class Puntos : MonoBehaviour
     void Update()
     {
         textComponent.text = "Puntos: " + puntos;
-        if (puntos >= 5)
+        if (puntos >= 100)
         {
             SceneManager.LoadScene(3);
         }
@@ -28,5 +28,9 @@ public class Puntos : MonoBehaviour
     public void AddPoints(int cpts)
     {
         puntos = puntos + cpts;
+    }
+    public int PuntosActuales()
+    {
+        return puntos;
     }
 }
