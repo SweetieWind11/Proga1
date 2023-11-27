@@ -18,6 +18,9 @@ public class Spawn : MonoBehaviour
     public GameObject NashBullet;
     private float lastSpawnTime = 0f;
     public float spawnCooldown = 3f;
+    private float lastSpawnTimeB = 0f;
+    public float spawnCooldownB = 0.2f;
+
     public SpriteRenderer HullSprite;
     private bool HBCheck;
 
@@ -36,7 +39,7 @@ public class Spawn : MonoBehaviour
     {
         if (NShoot)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && CanSpawnB())
             {
                 SPO();
             }
@@ -59,6 +62,10 @@ public class Spawn : MonoBehaviour
         Destroy(spawnedObject, SPI);
         lastSpawnTime = Time.time;
     }
+    bool CanSpawnB()
+    {
+        return Time.time - lastSpawnTimeB >= spawnCooldownB;
+    }
     bool CanSpawnN()
     {
         return Time.time - lastSpawnTime >= spawnCooldown;
@@ -67,6 +74,7 @@ public class Spawn : MonoBehaviour
     {
         GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
         Destroy(spawnedObject, SPI);
+        lastSpawnTimeB = Time.time;
     }
 
     public void Lifes()
