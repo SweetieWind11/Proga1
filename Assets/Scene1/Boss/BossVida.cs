@@ -13,7 +13,9 @@ public class BossVida : MonoBehaviour
     private Puntos puntos;
     public float Speed = 2f;
     private float SPI = 0F;
+    private float SPI2 = 0F;
     public GameObject CanonRed;
+    public GameObject ArrowRed;
 
     void Start()
     {
@@ -21,7 +23,6 @@ public class BossVida : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -45,6 +46,17 @@ public class BossVida : MonoBehaviour
                 SPI = 1F;
             }
         }
+        if (vida <= 70)
+        {
+            SPI2 -= Time.deltaTime;
+            if ( SPI2 <= 0)
+            {
+                float num = Random.Range(-4, 8);
+                Vector3 EnemyStart = new Vector3(5, num, 0);
+                Instantiate(ArrowRed, EnemyStart, transform.rotation);
+                SPI2 = 1.5F;
+            }
+        }
     }
 
     private void Move()
@@ -63,7 +75,7 @@ public class BossVida : MonoBehaviour
     {
         if (collision.gameObject.tag == "PRP")
         {
-            vida--;
+            vida = vida - 0.5f;
         }
     }
     public float vidap()

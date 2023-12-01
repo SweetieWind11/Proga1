@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1420,7 +1420,6 @@ GameObject:
   - component: {fileID: 4747307753104750566}
   - component: {fileID: 7735443835197433493}
   - component: {fileID: 5616892706576922370}
-  - component: {fileID: 7735443835197433495}
   - component: {fileID: 7735443835197433494}
   m_Layer: 0
   m_Name: Boss
@@ -1505,7 +1504,7 @@ MonoBehaviour:
   BossBar: {fileID: 597986863}
   Speed: 2
   CanonRed: {fileID: 4008936430920032696, guid: 6e92c46e81f607845914374f40dec4dc, type: 3}
-  SpearRed: {fileID: 6277497763266819351, guid: e64f7bdfbc1462142a30b36b1f0aede1, type: 3}
+  ArrowRed: {fileID: 6759949014485461483, guid: 6308b6cbf2d0f7848b837ece611d936e, type: 3}
 --- !u!65 &7079210054821977781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1548,18 +1547,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sword: {fileID: 7143628136808389606, guid: 6ef2dc23498b47c4c93fa9d738466e89, type: 3}
---- !u!114 &7735443835197433495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5243493399278057220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e62aa5437f14ab46aedf30b578de33c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7991201880600591085
 GameObject:
   m_ObjectHideFlags: 0
